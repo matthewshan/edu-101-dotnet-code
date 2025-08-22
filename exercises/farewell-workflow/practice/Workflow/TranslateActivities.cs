@@ -18,4 +18,11 @@ public class TranslateActivities
 
     // TODO Part A: Copy the GetSpanishGreeting method to create a new Activity
     // Rename the new Activity GetSpanishFarewell.
+    [Activity]
+    public async Task<string> GetSpanishFarewellAsync(string name)
+    {
+        var encodedName = Uri.EscapeDataString(name);
+        var response = await client.GetAsync($"http://localhost:5125/get-spanish-farewell?name={encodedName}");
+        return await response.Content.ReadAsStringAsync();
+    }
 }
