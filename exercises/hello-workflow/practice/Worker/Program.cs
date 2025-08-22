@@ -17,7 +17,7 @@ Console.CancelKeyPress += (_, eventArgs) =>
 // Create worker
 using var worker = new TemporalWorker(
     client,
-    new TemporalWorkerOptions("my-task-queue") // TODO PART B: modify the statement here to specify the Task Queue name to be greeting-tasks
+    new TemporalWorkerOptions("greeting-tasks") // TODO PART B: modify the statement here to specify the Task Queue name to be greeting-tasks
         .AddWorkflow<SayHelloWorkflow>());
 
 // Run worker until cancelled

@@ -15,7 +15,7 @@ public class GreetingWorkflow
 
         // TODO: Change the line below to execute the Activity function you created
         var farewell = await Workflow.ExecuteActivityAsync(
-            (TranslateActivities act) => act.GetSpanishGreetingAsync(name),
+            (TranslateActivities act) => act.GetSpanishFarewellAsync(name),
             new() { ScheduleToCloseTimeout = TimeSpan.FromMinutes(3) });
 
         // Greeting and farewell
